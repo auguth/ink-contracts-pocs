@@ -3,7 +3,7 @@ name: CI/CD - Validator Reward Contract
 on:
   push:
     paths:
-      - 'validator_reward_contract/**'
+      - 'validator_reward_contract/**' 
     branches:
       - main
   pull_request:
@@ -23,17 +23,26 @@ jobs:
 
       - name: Install Rust Toolchain
         uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: nightly
+          components: rust-src, rustfmt, clippy
 
       - name: Install ink! CLI
         run: |
           cargo install --force cargo-contract
 
+      - name: Install Substrate Dependencies
+        run: |
+          sudo apt update && sudo apt install -y \
+          cmake clang pkg-config libssl-dev \
+          libudev-dev protobuf-compiler
+
       - name: Build Validator Reward Contract
         run: |
           cd validator_reward_contract
-          cargo contract build 
+          cargo contract build --release  
 
       - name: Run Tests
         run: |
           cd validator_reward_contract
-          cargo test
+          cargo test --all
