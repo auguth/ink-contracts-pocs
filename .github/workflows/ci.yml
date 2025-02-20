@@ -1,0 +1,39 @@
+name: CI/CD - Validator Reward Contract
+
+on:
+  push:
+    paths:
+      - 'validator_reward_contract/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'validator_reward_contract/**'
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build & Test Contract
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install ink! CLI
+        run: |
+          cargo install --force cargo-contract
+
+      - name: Build Validator Reward Contract
+        run: |
+          cd validator_reward_contract
+          cargo contract build 
+
+      - name: Run Tests
+        run: |
+          cd validator_reward_contract
+          cargo test
