@@ -40,9 +40,9 @@ jobs:
       - name: Build Validator Reward Contract
         run: |
           cd validator_reward_contract
-          cargo contract build --release  
+          cargo contract build 
 
       - name: Run Tests
         run: |
           cd validator_reward_contract
-          cargo test --all
+          cargo test 
