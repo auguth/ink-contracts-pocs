@@ -22,7 +22,7 @@ cargo:rerun-if-env-changed=HOST_CFLAGS
 HOST_CFLAGS = None
 cargo:rerun-if-env-changed=CFLAGS
 CFLAGS = None
-running: env -u IPHONEOS_DEPLOYMENT_TARGET "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-2" "-fno-omit-frame-pointer" "-arch" "arm64" "-Wall" "-Wextra" "-DCFG_TARGET_OS_macos" "-DCFG_TARGET_ARCH_aarch64" "-o" "/Users/workspace/Desktop/ink_contract_M3/ink-contracts-for-testing/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/src/helpers.o" "-c" "src/helpers.c"
+running: env -u IPHONEOS_DEPLOYMENT_TARGET "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-2" "-fno-omit-frame-pointer" "-arch" "arm64" "-Wall" "-Wextra" "-DCFG_TARGET_OS_macos" "-DCFG_TARGET_ARCH_aarch64" "-o" "/Users/workspace/Desktop/m3-finalize/ink-contracts-pocs/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/src/helpers.o" "-c" "src/helpers.c"
 exit status: 0
 cargo:rerun-if-env-changed=AR_aarch64-apple-darwin
 AR_aarch64-apple-darwin = None
@@ -40,9 +40,9 @@ cargo:rerun-if-env-changed=HOST_ARFLAGS
 HOST_ARFLAGS = None
 cargo:rerun-if-env-changed=ARFLAGS
 ARFLAGS = None
-running: ZERO_AR_DATE="1" "ar" "cq" "/Users/workspace/Desktop/ink_contract_M3/ink-contracts-for-testing/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/libwasmtime-helpers.a" "/Users/workspace/Desktop/ink_contract_M3/ink-contracts-for-testing/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/src/helpers.o"
+running: ZERO_AR_DATE="1" "ar" "cq" "/Users/workspace/Desktop/m3-finalize/ink-contracts-pocs/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/libwasmtime-helpers.a" "/Users/workspace/Desktop/m3-finalize/ink-contracts-pocs/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/src/helpers.o"
 exit status: 0
-running: "ar" "s" "/Users/workspace/Desktop/ink_contract_M3/ink-contracts-for-testing/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/libwasmtime-helpers.a"
+running: "ar" "s" "/Users/workspace/Desktop/m3-finalize/ink-contracts-pocs/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out/libwasmtime-helpers.a"
 exit status: 0
 cargo:rustc-link-lib=static=wasmtime-helpers
-cargo:rustc-link-search=native=/Users/workspace/Desktop/ink_contract_M3/ink-contracts-for-testing/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out
+cargo:rustc-link-search=native=/Users/workspace/Desktop/m3-finalize/ink-contracts-pocs/factorial/target/debug/build/wasmtime-runtime-938450cbc778afbf/out
